@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ML Prediction App</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<div class="container">
+    <h1>Machine Learning Prediction</h1>
+
+    <form action="/predict" method="POST">
+        <label>Unnamed: 0:</label>
+        <input type="number" step="any" name="f0" required>
+
+        <label>Source City:</label>
+        <input type="number" step="any" name="f1" required>
+
+        <label>Departure Time:</label>
+        <input type="number" step="any" name="f2" required>
+
+        <label>Stops:</label>
+        <input type="number" step="any" name="f3" required>
+
+        <label>Arrival Time:</label>
+        <input type="number" step="any" name="f4" required>
+
+        <label>Destination City:</label>
+        <input type="number" step="any" name="f5" required>
+
+        <label>Class:</label>
+        <input type="number" step="any" name="f6" required>
+
+        <label>Duration:</label>
+        <input type="number" step="any" name="f7" required>
+
+        <label>Days Left:</label>
+        <input type="number" step="any" name="f8" required>
+
+        <button type="submit">Predict</button>
+    </form>
+
+    {% if result %}
+        <h2>Prediction: {{ result }}</h2>
+    {% endif %}
+
+    {% if error %}
+        <p style="color:red;">Error: {{ error }}</p>
+    {% endif %}
+</div>
+
+</body>
+</html>
